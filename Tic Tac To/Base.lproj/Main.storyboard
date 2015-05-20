@@ -16,25 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LR-Z6-Jg3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKr-YF-blD" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
                                 <rect key="frame" x="40" y="264" width="240" height="40"/>
+                                <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Z7K-py-9wf"/>
-                                    <constraint firstAttribute="width" constant="240" id="vEN-p0-E3o"/>
+                                    <constraint firstAttribute="width" constant="240" id="Osn-jG-hYO"/>
+                                    <constraint firstAttribute="height" constant="40" id="jVX-Gs-ZBT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <color key="tintColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="startButton">
+                                <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gJw-Wf-ts6" kind="presentation" id="VKv-rp-iOk"/>
+                                    <segue destination="gJw-Wf-ts6" kind="presentation" id="d1f-BH-jrv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="8LR-Z6-Jg3" secondAttribute="centerX" id="DUG-Hi-wWO"/>
-                            <constraint firstAttribute="centerY" secondItem="8LR-Z6-Jg3" secondAttribute="centerY" id="ZPC-Rd-viv"/>
+                            <constraint firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="0t2-Rr-kbm"/>
+                            <constraint firstAttribute="centerY" secondItem="AKr-YF-blD" secondAttribute="centerY" id="5pd-9o-mci"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -57,9 +70,42 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-RW-Tx2">
                                 <rect key="frame" x="15" y="139" width="290" height="290"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="61o-dk-ZdU">
-                                        <rect key="frame" x="0.0" y="0.0" width="290" height="290"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKY-bc-alQ" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="93" y="0.0" width="4" height="290"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nh-b8-8Rt" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="193" y="0.0" width="4" height="290"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-Fp-zo6" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="290" height="4"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTW-sO-6Nv" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="290" height="4"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UhP-35-dmr">
                                         <rect key="frame" x="15" y="15" width="63" height="63"/>
                                     </imageView>
@@ -173,8 +219,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="DfH-Ka-dwd"/>
                                     <constraint firstAttribute="width" constant="290" id="bke-cY-egd"/>
-                                    <constraint firstAttribute="centerX" secondItem="61o-dk-ZdU" secondAttribute="centerX" id="eVq-9N-tzJ"/>
-                                    <constraint firstAttribute="centerY" secondItem="61o-dk-ZdU" secondAttribute="centerY" id="mEV-GD-XJ1"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtT-gE-1Et">
@@ -230,8 +274,4 @@
             <point key="canvasLocation" x="1050" y="310"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="board" width="290" height="290"/>
-        <image name="startButton" width="240" height="40"/>
-    </resources>
 </document>

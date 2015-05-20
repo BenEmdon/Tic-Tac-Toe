@@ -54,7 +54,7 @@ class GameViewController: UIViewController {
     
     
     func setImageToSpot(spot:Int, player:Int){
-        var playerMark = player == 1 ? "x-icon" : "o-icon"
+        var playerMark = player == 1 ? "x-icon2" : "o-icon2"
         plays[spot] = player
         switch spot {
         case 1:

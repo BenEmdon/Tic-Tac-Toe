@@ -11,7 +11,6 @@
 		1D7F56311B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F562F1B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld */; };
 		1D7F56331B0CF63E00A94E99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56321B0CF63E00A94E99 /* ViewController.swift */; };
 		1D7F56361B0CF63E00A94E99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7F56341B0CF63E00A94E99 /* Main.storyboard */; };
-		1D7F56381B0CF63E00A94E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7F56371B0CF63E00A94E99 /* Images.xcassets */; };
 		1D7F563B1B0CF63E00A94E99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D7F56391B0CF63E00A94E99 /* LaunchScreen.xib */; };
 		1D7F56471B0CF63E00A94E99 /* Tic_Tac_ToTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56461B0CF63E00A94E99 /* Tic_Tac_ToTests.swift */; };
 		1D7F56511B0D018E00A94E99 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56501B0D018E00A94E99 /* GameViewController.swift */; };
@@ -44,6 +43,7 @@
 		1D7F568B1B0D01F700A94E99 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F566E1B0D01F700A94E99 /* TransitionManager.swift */; };
 		1D7F568C1B0D01F700A94E99 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F566F1B0D01F700A94E99 /* TransitionZoom.swift */; };
 		1D7F568D1B0D01F700A94E99 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56701B0D01F700A94E99 /* UnwindSegue.swift */; };
+		1DF639731B0D49C900CB05D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF639721B0D49C900CB05D7 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,6 @@
 		1D7F56301B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tic_Tac_To.xcdatamodel; sourceTree = "<group>"; };
 		1D7F56321B0CF63E00A94E99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D7F56351B0CF63E00A94E99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1D7F56371B0CF63E00A94E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1D7F563A1B0CF63E00A94E99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1D7F56401B0CF63E00A94E99 /* Tic Tac ToTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tic Tac ToTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7F56451B0CF63E00A94E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		1D7F566E1B0D01F700A94E99 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		1D7F566F1B0D01F700A94E99 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		1D7F56701B0D01F700A94E99 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		1DF639721B0D49C900CB05D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 				1D7F56321B0CF63E00A94E99 /* ViewController.swift */,
 				1D7F56501B0D018E00A94E99 /* GameViewController.swift */,
 				1D7F56341B0CF63E00A94E99 /* Main.storyboard */,
-				1D7F56371B0CF63E00A94E99 /* Images.xcassets */,
+				1DF639721B0D49C900CB05D7 /* Images.xcassets */,
 				1D7F56391B0CF63E00A94E99 /* LaunchScreen.xib */,
 				1D7F562F1B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld */,
 				1D7F562B1B0CF63E00A94E99 /* Supporting Files */,
@@ -297,8 +297,8 @@
 			files = (
 				1D7F567D1B0D01F700A94E99 /* Info.plist in Resources */,
 				1D7F56361B0CF63E00A94E99 /* Main.storyboard in Resources */,
+				1DF639731B0D49C900CB05D7 /* Images.xcassets in Resources */,
 				1D7F563B1B0CF63E00A94E99 /* LaunchScreen.xib in Resources */,
-				1D7F56381B0CF63E00A94E99 /* Images.xcassets in Resources */,
 				1D7F56801B0D01F700A94E99 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,9 +474,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Tic Tac To/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tic Tac To";
 			};
 			name = Debug;
 		};
@@ -484,9 +485,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Tic Tac To/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tic Tac To";
 			};
 			name = Release;
 		};
@@ -504,7 +506,7 @@
 				);
 				INFOPLIST_FILE = "Tic Tac ToTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tic Tac ToTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tic Tac To.app/Tic Tac To";
 			};
 			name = Debug;
@@ -519,7 +521,7 @@
 				);
 				INFOPLIST_FILE = "Tic Tac ToTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tic Tac ToTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tic Tac To.app/Tic Tac To";
 			};
 			name = Release;
@@ -543,6 +545,7 @@
 				1D7F564C1B0CF63E00A94E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D7F564D1B0CF63E00A94E99 /* Build configuration list for PBXNativeTarget "Tic Tac ToTests" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +554,7 @@
 				1D7F564F1B0CF63E00A94E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
