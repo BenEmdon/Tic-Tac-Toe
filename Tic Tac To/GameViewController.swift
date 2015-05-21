@@ -135,8 +135,8 @@ class GameViewController: UIViewController
         }
     }
     
-    //ai
-    
+    //ai function
+    //requires delay 
     
     func checkTop(#value:Int) -> (location:String, pattern:String)
     {
@@ -293,7 +293,7 @@ class GameViewController: UIViewController
         }
         
         userMessage.hidden = false
-        userMessage.text = "Looks like it was a tie"
+        userMessage.text = "It's a tie!"
         
         resetButton.hidden =  false
         
@@ -418,18 +418,7 @@ class GameViewController: UIViewController
             return 4
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    //end class
 }
 
 
