@@ -67,7 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-RW-Tx2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yOp-RW-Tx2" userLabel="Playing Board" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
                                 <rect key="frame" x="15" y="139" width="290" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oKY-bc-alQ" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
@@ -247,6 +247,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="playingBoardView" destination="yOp-RW-Tx2" id="hsS-rw-Ekz"/>
                         <outlet property="resetButton" destination="MtT-gE-1Et" id="V8s-ih-bbu"/>
                         <outlet property="ticTacButton1" destination="7u4-pn-by5" id="abR-I4-prk"/>
                         <outlet property="ticTacButton2" destination="QaU-Gk-fhX" id="45N-oH-RKO"/>

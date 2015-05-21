@@ -8,8 +8,12 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController
+{
 
+    @IBOutlet var playingBoardView: DesignableView!
+    
+    
     
     @IBOutlet var ticTacImg1: UIImageView!
     @IBOutlet var ticTacImg2: UIImageView!
@@ -41,9 +45,11 @@ class GameViewController: UIViewController {
     var aiDeciding = false
     
     
-    @IBAction func UIButtonClicked(sender:UIButton) {
+    @IBAction func UIButtonClicked(sender:UIButton)
+    {
         userMessage.hidden=true
-        if plays[sender.tag]==nil && !aiDeciding && !done {
+        if plays[sender.tag]==nil && !aiDeciding && !done
+        {
             setImageToSpot(sender.tag, player:1)
         }
         
@@ -53,10 +59,12 @@ class GameViewController: UIViewController {
     
     
     
-    func setImageToSpot(spot:Int, player:Int){
+    func setImageToSpot(spot:Int, player:Int)
+    {
         var playerMark = player == 1 ? "x-icon2" : "o-icon2"
         plays[spot] = player
-        switch spot {
+        switch spot
+        {
         case 1:
             ticTacImg1.image = UIImage(named: playerMark)
         case 2:
@@ -80,7 +88,8 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func resetButtonClicked(sender:UIButton) {
+    @IBAction func resetButtonClicked(sender:UIButton)
+    {
         resetButton.hidden = true
         userMessage.hidden = true
         done = false
@@ -104,7 +113,8 @@ class GameViewController: UIViewController {
     }
     
     
-    func checkForWin(){
+    func checkForWin()
+    {
         var whoWon = ["I":0,"you":1]
         for(key,value) in whoWon
         {
@@ -123,18 +133,291 @@ class GameViewController: UIViewController {
                 done = true
             }
         }
+    }
+    
+    //ai
+    
+    
+    func checkTop(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("top", checkFor(value, inList: [1,2,3]))
+    }
+    func checkMiddle(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("middle", checkFor(value, inList: [4,5,6]))
+    }
+    func checkBottom(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("bottom", checkFor(value, inList: [7,8,9]))
+    }
+    func checkLeft(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("left", checkFor(value, inList: [1,4,7]))
+    }
+    func checkMiddleDown(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("middleDown", checkFor(value, inList: [2,5,8]))
+    }
+    func checkRight(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("right", checkFor(value, inList: [3,6,9]))
+    }
+    func checkDiagLeftRight(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("diagLeftRight", checkFor(value, inList: [1,5,9]))
+    }
+    func checkDiagRightLeft(#value:Int) -> (location:String, pattern:String)
+    {
+        return ("diagRightLeft", checkFor(value, inList: [7,5,3]))
+    }
+    
+    
+    
+    
+    func checkFor(value:Int, inList:[Int]) -> String
+    {
+        var conclusion = ""
+        for cell in inList
+        {
+            if plays[cell] == value
+            {
+                conclusion += "1"
+            }
+            else
+            {
+                conclusion += "0"
+            }
+        }
+        return conclusion
+    }
+    
+    
+    func rowCheck (#value:Int) -> (location:String, pattern:String)?
+    {
+        var acceptableFinds = ["110", "011", "101"]
+        var findFuncs = [checkTop, checkMiddle, checkBottom, checkLeft, checkMiddleDown, checkRight, checkDiagLeftRight, checkDiagRightLeft]
+        for algorithm in findFuncs
+        {
+            var algorithmResults = algorithm(value:value)
+            if (find(acceptableFinds,algorithmResults.pattern) != nil)
+            {
+                return algorithmResults
+            }
+        }
+        return nil
+    }
+    
+    
+    func isOccupied(spot:Int) -> Bool
+    {
+        return plays[spot] != nil
+    }
+    
+    
+    func aiTurn()
+    {
+        if done
+        {
+            return
+        }
+        
+        aiDeciding = true
+        
+        //we (the computer) have two in a row
+        if let result = rowCheck(value:0)
+        {
+            var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
+            if !isOccupied(whereToPlayResult)
+            {
+                setImageToSpot(whereToPlayResult, player: 0)
+                aiDeciding = false
+                checkForWin()
+                return
+            }
+        }
         
         
+        //we (the player) have two in a row
+        if let result = rowCheck(value:1)
+        {
+            var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
+            if !isOccupied(whereToPlayResult)
+            {
+                setImageToSpot(whereToPlayResult, player: 0)
+                aiDeciding = false
+                checkForWin()
+                return
+            }
+        }
+        
+        
+        //is center available?
+        if !isOccupied(5)
+        {
+            setImageToSpot(5, player: 0)
+            aiDeciding = false
+            checkForWin()
+            return
+        }
+        
+        
+        func firstAvailable(#isCorner:Bool) -> Int?
+        {
+            var spots = isCorner ? [1, 3, 7, 9] : [2, 4, 6, 8]
+            for spot in spots
+            {
+                if !isOccupied(spot)
+                {
+                    return spot
+                }
+            }
+            return nil
+        }
+        
+        //is a corner available?
+        if let cornerAvailable = firstAvailable(isCorner: true)
+        {
+            setImageToSpot(cornerAvailable, player: 0)
+            aiDeciding = false
+            checkForWin()
+            return
+        }
+        
+        //is a side available?
+        if let sideAvailable = firstAvailable(isCorner: false)
+        {
+            setImageToSpot(sideAvailable, player: 0)
+            aiDeciding = false
+            checkForWin()
+            return
+        }
+        
+        userMessage.hidden = false
+        userMessage.text = "Looks like it was a tie"
+        
+        resetButton.hidden =  false
+        
+        
+        aiDeciding = false
         
     }
     
-    func aiTurn(){
+    func whereToPlay(location:String, pattern:String) ->Int
+    {
+        var leftPattern = "011"
+        var rightPattern = "110"
+        var middlePattern = "101"
         
+        switch location
+        {
+        case "top":
+            if pattern == leftPattern
+            {
+                return 1
+            }
+            else if pattern == middlePattern
+            {
+                return 2
+            }
+            else
+            {
+                return 3
+            }
+        case "middle":
+            if pattern == leftPattern
+            {
+                return 4
+            }
+            else if pattern == middlePattern
+            {
+                return 5
+            }
+            else
+            {
+                return 6
+            }
+        case "bottom":
+            if pattern == leftPattern
+            {
+                return 7
+            }
+            else if pattern == middlePattern
+            {
+                return 8
+            }
+            else
+            {
+                return 9
+            }
+        case "left":
+            if pattern == leftPattern
+            {
+                return 1
+            }
+            else if pattern == middlePattern
+            {
+                return 4
+            }
+            else
+            {
+                return 7
+            }
+        case "middleDown":
+            if pattern == leftPattern
+            {
+                return 2
+            }
+            else if pattern == middlePattern
+            {
+                return 5
+            }
+            else
+            {
+                return 8
+            }
+        case "right":
+            if pattern == leftPattern
+            {
+                return 3
+            }
+            else if pattern == middlePattern
+            {
+                return 6
+            }
+            else
+            {
+                return 9
+            }
+        case "diagLeftRight":
+            if pattern == leftPattern
+            {
+                return 1
+            }
+            else if pattern == middlePattern
+            {
+                return 5
+            }
+            else
+            {
+                return 9
+            }
+        case "diagRightLeft":
+            if pattern == leftPattern
+            {
+                return 3
+            }
+            else if pattern == middlePattern
+            {
+                return 5
+            }
+            else
+            {
+                return 7
+            }
+        default:
+            return 4
+        }
     }
-    
-    
-    
-    
     
     
     
@@ -146,8 +429,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
 
