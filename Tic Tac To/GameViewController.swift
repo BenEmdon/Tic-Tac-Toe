@@ -47,12 +47,18 @@ class GameViewController: UIViewController
     
     @IBAction func UIButtonClicked(sender:UIButton)
     {
-        userMessage.hidden=true
-        if plays[sender.tag]==nil && !aiDeciding && !done
+        playingBoardView.scaleX = 0.3
+        playingBoardView.scaleY = 0.3
+        playingBoardView.animateTo()
+        playingBoardView.scaleX = 0.3
+        playingBoardView.scaleY = 0.3
+        playingBoardView.animate()
+        
+        userMessage.hidden = true
+        if plays[sender.tag] == nil && !aiDeciding && !done
         {
             setImageToSpot(sender.tag, player:1)
         }
-        
         checkForWin()
         aiTurn()
     }
@@ -110,6 +116,10 @@ class GameViewController: UIViewController
         ticTacImg8.image = nil
         ticTacImg9.image = nil
         
+        playingBoardView.animation = "slideDown"
+        playingBoardView.duration = 1.3
+        playingBoardView.opacity = 0
+        playingBoardView.animate()
     }
     
     
