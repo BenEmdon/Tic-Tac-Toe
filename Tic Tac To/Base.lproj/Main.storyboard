@@ -40,7 +40,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gJw-Wf-ts6" kind="presentation" id="d1f-BH-jrv"/>
+                                    <segue destination="gJw-Wf-ts6" kind="presentation" modalTransitionStyle="crossDissolve" id="d1f-BH-jrv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-eD-DJO" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
@@ -67,7 +67,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="xZE-5y-n6o" kind="presentation" id="GHk-Yv-6fu"/>
+                                    <segue destination="xZE-5y-n6o" kind="presentation" modalTransitionStyle="crossDissolve" id="GHk-Yv-6fu"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -39,27 +39,50 @@ class MultiplayerViewController: UIViewController
     @IBOutlet var userMessage: UILabel!
     
     
+    
+    
+    
+    
+    
     var plays = [Int: Int]()
     var done = false
     var aiDeciding = false
+    var counter:Int = 0
     
     
     @IBAction func UIButtonClicked(sender:UIButton)
     {
-        playingBoardView.scaleX = 0.3
-        playingBoardView.scaleY = 0.3
-        playingBoardView.animateTo()
-        playingBoardView.scaleX = 0.3
-        playingBoardView.scaleY = 0.3
-        playingBoardView.animate()
+        if !done
+        {
+            playingBoardView.scaleX = 0.3
+            playingBoardView.scaleY = 0.3
+            playingBoardView.animateTo()
+            playingBoardView.scaleX = 0.3
+            playingBoardView.scaleY = 0.3
+            playingBoardView.animate()
+        }
+        else
+        {
+            playingBoardView.animation = "flash"
+            playingBoardView.duration = 0.1
+            playingBoardView.animate()
+        }
         
         userMessage.hidden = true
-        if plays[sender.tag] == nil && !aiDeciding && !done
+        if plays[sender.tag] == nil && !done
         {
-            setImageToSpot(sender.tag, player:1)
+            if counter%2==0
+            {
+                setImageToSpot(sender.tag, player:1)
+                counter++
+            }
+            else
+            {
+                setImageToSpot(sender.tag, player:0)
+                counter++
+            }
         }
         checkForWin()
-        aiTurn()
     }
     
     
@@ -124,7 +147,7 @@ class MultiplayerViewController: UIViewController
     
     func checkForWin()
     {
-        var whoWon = ["I":0,"you":1]
+        var whoWon = ["Red":0,"Blue":1]
         for(key,value) in whoWon
         {
             if  (plays[1] == value && plays[2] == value && plays[3] == value) || //across the top
@@ -136,7 +159,14 @@ class MultiplayerViewController: UIViewController
                 (plays[1] == value && plays[5] == value && plays[9] == value) || //diag left right
                 (plays[3] == value && plays[5] == value && plays[7] == value)//diag right left
             {
-                userMessage.text = "Looks like \(key) won!"
+                userMessage.text = "\(key) won!"
+                userMessage.hidden = false
+                resetButton.hidden = false
+                done = true
+            }
+            else if allOccupied()
+            {
+                userMessage.text = "It's a tie!"
                 userMessage.hidden = false
                 resetButton.hidden = false
                 done = true
@@ -144,76 +174,17 @@ class MultiplayerViewController: UIViewController
         }
     }
     
-    //ai function
-    //requires delay
     
-    func checkTop(#value:Int) -> (location:String, pattern:String)
+    func allOccupied() -> Bool
     {
-        return ("top", checkFor(value, inList: [1,2,3]))
-    }
-    func checkMiddle(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("middle", checkFor(value, inList: [4,5,6]))
-    }
-    func checkBottom(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("bottom", checkFor(value, inList: [7,8,9]))
-    }
-    func checkLeft(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("left", checkFor(value, inList: [1,4,7]))
-    }
-    func checkMiddleDown(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("middleDown", checkFor(value, inList: [2,5,8]))
-    }
-    func checkRight(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("right", checkFor(value, inList: [3,6,9]))
-    }
-    func checkDiagLeftRight(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("diagLeftRight", checkFor(value, inList: [1,5,9]))
-    }
-    func checkDiagRightLeft(#value:Int) -> (location:String, pattern:String)
-    {
-        return ("diagRightLeft", checkFor(value, inList: [7,5,3]))
-    }
-    
-    
-    
-    
-    func checkFor(value:Int, inList:[Int]) -> String
-    {
-        var conclusion = ""
-        for cell in inList
+        for spot in 1...9
         {
-            if plays[cell] == value
+            if !isOccupied(spot)
             {
-                conclusion += "1"
-            }
-            else
-            {
-                conclusion += "0"
+                return false
             }
         }
-        return conclusion
-    }
-    
-    
-    func rowCheck (#value:Int) -> (location:String, pattern:String)?
-    {
-        var acceptableFinds = ["110", "011", "101"]
-        var findFuncs = [checkTop, checkMiddle, checkBottom, checkLeft, checkMiddleDown, checkRight, checkDiagLeftRight, checkDiagRightLeft]
-        for algorithm in findFuncs
-        {
-            var algorithmResults = algorithm(value:value)
-            if (find(acceptableFinds,algorithmResults.pattern) != nil)
-            {
-                return algorithmResults
-            }
-        }
-        return nil
+        return true
     }
     
     
@@ -222,27 +193,8 @@ class MultiplayerViewController: UIViewController
         return plays[spot] != nil
     }
     
-    
-    func aiTurn()
-    {
-        if done
-        {
-            return
-        }
-        
-        aiDeciding = true
-        
-        //priority code here
-        
-        userMessage.hidden = false
-        userMessage.text = "It's a tie!"
-        
-        resetButton.hidden =  false
-        
-        
-        aiDeciding = false
-        
-    }
-    
     //end class
 }
+
+
+

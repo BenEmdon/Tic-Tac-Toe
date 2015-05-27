@@ -12,8 +12,7 @@ class GameViewController: UIViewController
 {
 
     @IBOutlet var playingBoardView: DesignableView!
-    
-    
+
     
     @IBOutlet var ticTacImg1: UIImageView!
     @IBOutlet var ticTacImg2: UIImageView!
@@ -133,7 +132,7 @@ class GameViewController: UIViewController
     
     func checkForWin()
     {
-        var whoWon = ["I":0,"you":1]
+        var whoWon = ["Computer":0,"You":1]
         for(key,value) in whoWon
         {
             if  (plays[1] == value && plays[2] == value && plays[3] == value) || //across the top
@@ -145,12 +144,31 @@ class GameViewController: UIViewController
                 (plays[1] == value && plays[5] == value && plays[9] == value) || //diag left right
                 (plays[3] == value && plays[5] == value && plays[7] == value)//diag right left
             {
-                userMessage.text = "Looks like \(key) won!"
+                userMessage.text = "\(key) won!"
+                userMessage.hidden = false
+                resetButton.hidden = false
+                done = true
+            }else if allOccupied()
+            {
+                userMessage.text = "It's a tie!"
                 userMessage.hidden = false
                 resetButton.hidden = false
                 done = true
             }
         }
+    }
+    
+    
+    func allOccupied() -> Bool
+    {
+        for i in 1...9
+        {
+            if !isOccupied(i)
+            {
+                return false
+            }
+        }
+        return true
     }
     
     //ai function
@@ -241,7 +259,7 @@ class GameViewController: UIViewController
         
         aiDeciding = true
         
-        //we (the computer) have two in a row
+        //computer has two in a row
         if let result = rowCheck(value:0)
         {
             var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
@@ -255,7 +273,7 @@ class GameViewController: UIViewController
         }
         
         
-        //we (the player) have two in a row
+        //player has two in a row
         if let result = rowCheck(value:1)
         {
             var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
@@ -309,13 +327,6 @@ class GameViewController: UIViewController
             checkForWin()
             return
         }
-        
-        userMessage.hidden = false
-        userMessage.text = "It's a tie!"
-        done = true
-        
-        resetButton.hidden =  false
-        
         
         aiDeciding = false
         
