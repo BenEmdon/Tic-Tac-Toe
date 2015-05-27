@@ -8,11 +8,10 @@
 
 import UIKit
 
-class GameViewController: UIViewController
+class MultiplayerViewController: UIViewController
 {
-
-    @IBOutlet var playingBoardView: DesignableView!
     
+    @IBOutlet var playingBoardView: DesignableView!
     
     
     @IBOutlet var ticTacImg1: UIImageView!
@@ -47,21 +46,13 @@ class GameViewController: UIViewController
     
     @IBAction func UIButtonClicked(sender:UIButton)
     {
-        if !done
-        {
-            playingBoardView.scaleX = 0.3
-            playingBoardView.scaleY = 0.3
-            playingBoardView.animateTo()
-            playingBoardView.scaleX = 0.3
-            playingBoardView.scaleY = 0.3
-            playingBoardView.animate()
-        }
-        else
-        {
-            playingBoardView.animation = "flash"
-            playingBoardView.duration = 0.1
-            playingBoardView.animate()
-        }
+        playingBoardView.scaleX = 0.3
+        playingBoardView.scaleY = 0.3
+        playingBoardView.animateTo()
+        playingBoardView.scaleX = 0.3
+        playingBoardView.scaleY = 0.3
+        playingBoardView.animate()
+        
         userMessage.hidden = true
         if plays[sender.tag] == nil && !aiDeciding && !done
         {
@@ -154,7 +145,7 @@ class GameViewController: UIViewController
     }
     
     //ai function
-    //requires delay 
+    //requires delay
     
     func checkTop(#value:Int) -> (location:String, pattern:String)
     {
@@ -241,78 +232,10 @@ class GameViewController: UIViewController
         
         aiDeciding = true
         
-        //we (the computer) have two in a row
-        if let result = rowCheck(value:0)
-        {
-            var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
-            if !isOccupied(whereToPlayResult)
-            {
-                setImageToSpot(whereToPlayResult, player: 0)
-                aiDeciding = false
-                checkForWin()
-                return
-            }
-        }
-        
-        
-        //we (the player) have two in a row
-        if let result = rowCheck(value:1)
-        {
-            var whereToPlayResult = whereToPlay(result.location, pattern:result.pattern)
-            if !isOccupied(whereToPlayResult)
-            {
-                setImageToSpot(whereToPlayResult, player: 0)
-                aiDeciding = false
-                checkForWin()
-                return
-            }
-        }
-        
-        
-        //is center available?
-        if !isOccupied(5)
-        {
-            setImageToSpot(5, player: 0)
-            aiDeciding = false
-            checkForWin()
-            return
-        }
-        
-        
-        func firstAvailable(#isCorner:Bool) -> Int?
-        {
-            var spots = isCorner ? [1, 3, 7, 9] : [2, 4, 6, 8]
-            for spot in spots
-            {
-                if !isOccupied(spot)
-                {
-                    return spot
-                }
-            }
-            return nil
-        }
-        
-        //is a corner available?
-        if let cornerAvailable = firstAvailable(isCorner: true)
-        {
-            setImageToSpot(cornerAvailable, player: 0)
-            aiDeciding = false
-            checkForWin()
-            return
-        }
-        
-        //is a side available?
-        if let sideAvailable = firstAvailable(isCorner: false)
-        {
-            setImageToSpot(sideAvailable, player: 0)
-            aiDeciding = false
-            checkForWin()
-            return
-        }
+        //priority code here
         
         userMessage.hidden = false
         userMessage.text = "It's a tie!"
-        done = true
         
         resetButton.hidden =  false
         
@@ -321,129 +244,5 @@ class GameViewController: UIViewController
         
     }
     
-    func whereToPlay(location:String, pattern:String) ->Int
-    {
-        var leftPattern = "011"
-        var rightPattern = "110"
-        var middlePattern = "101"
-        
-        switch location
-        {
-        case "top":
-            if pattern == leftPattern
-            {
-                return 1
-            }
-            else if pattern == middlePattern
-            {
-                return 2
-            }
-            else
-            {
-                return 3
-            }
-        case "middle":
-            if pattern == leftPattern
-            {
-                return 4
-            }
-            else if pattern == middlePattern
-            {
-                return 5
-            }
-            else
-            {
-                return 6
-            }
-        case "bottom":
-            if pattern == leftPattern
-            {
-                return 7
-            }
-            else if pattern == middlePattern
-            {
-                return 8
-            }
-            else
-            {
-                return 9
-            }
-        case "left":
-            if pattern == leftPattern
-            {
-                return 1
-            }
-            else if pattern == middlePattern
-            {
-                return 4
-            }
-            else
-            {
-                return 7
-            }
-        case "middleDown":
-            if pattern == leftPattern
-            {
-                return 2
-            }
-            else if pattern == middlePattern
-            {
-                return 5
-            }
-            else
-            {
-                return 8
-            }
-        case "right":
-            if pattern == leftPattern
-            {
-                return 3
-            }
-            else if pattern == middlePattern
-            {
-                return 6
-            }
-            else
-            {
-                return 9
-            }
-        case "diagLeftRight":
-            if pattern == leftPattern
-            {
-                return 1
-            }
-            else if pattern == middlePattern
-            {
-                return 5
-            }
-            else
-            {
-                return 9
-            }
-        case "diagRightLeft":
-            if pattern == leftPattern
-            {
-                return 3
-            }
-            else if pattern == middlePattern
-            {
-                return 5
-            }
-            else
-            {
-                return 7
-            }
-        default:
-            return 4
-        }
-    }
     //end class
 }
-
-
-
-
-
-
-
-

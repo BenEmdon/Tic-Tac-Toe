@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D69D63F1B14FA9F00D12524 /* MultiplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D69D63E1B14FA9F00D12524 /* MultiplayerViewController.swift */; };
 		1D7F562E1B0CF63E00A94E99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F562D1B0CF63E00A94E99 /* AppDelegate.swift */; };
 		1D7F56311B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F562F1B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld */; };
 		1D7F56331B0CF63E00A94E99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56321B0CF63E00A94E99 /* ViewController.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D69D63E1B14FA9F00D12524 /* MultiplayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiplayerViewController.swift; sourceTree = "<group>"; };
 		1D7F56281B0CF63E00A94E99 /* Tic Tac To.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac To.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7F562C1B0CF63E00A94E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D7F562D1B0CF63E00A94E99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				1D7F562D1B0CF63E00A94E99 /* AppDelegate.swift */,
 				1D7F56321B0CF63E00A94E99 /* ViewController.swift */,
 				1D7F56501B0D018E00A94E99 /* GameViewController.swift */,
+				1D69D63E1B14FA9F00D12524 /* MultiplayerViewController.swift */,
 				1D7F56341B0CF63E00A94E99 /* Main.storyboard */,
 				1DF639721B0D49C900CB05D7 /* Images.xcassets */,
 				1D7F56391B0CF63E00A94E99 /* LaunchScreen.xib */,
@@ -334,6 +337,7 @@
 				1D7F56761B0D01F700A94E99 /* DesignableImageView.swift in Sources */,
 				1D7F56821B0D01F700A94E99 /* SoundPlayer.swift in Sources */,
 				1D7F56811B0D01F700A94E99 /* Misc.swift in Sources */,
+				1D69D63F1B14FA9F00D12524 /* MultiplayerViewController.swift in Sources */,
 				1D7F567B1B0D01F700A94E99 /* DesignableView.swift in Sources */,
 				1D7F568A1B0D01F700A94E99 /* SpringView.swift in Sources */,
 				1D7F562E1B0CF63E00A94E99 /* AppDelegate.swift in Sources */,

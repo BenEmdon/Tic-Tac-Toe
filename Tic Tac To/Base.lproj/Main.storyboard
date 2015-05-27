@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKr-YF-blD" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
-                                <rect key="frame" x="40" y="264" width="240" height="40"/>
+                                <rect key="frame" x="40" y="234" width="240" height="40"/>
                                 <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Osn-jG-hYO"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
                                 <color key="tintColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="START">
+                                <state key="normal" title="SINGLEPLAYER">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -43,11 +43,40 @@
                                     <segue destination="gJw-Wf-ts6" kind="presentation" id="d1f-BH-jrv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-eD-DJO" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="40" y="294" width="240" height="40"/>
+                                <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="feA-z2-n57"/>
+                                    <constraint firstAttribute="height" constant="40" id="mvf-2H-8G9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                                <color key="tintColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MULTIPLAYER">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="xZE-5y-n6o" kind="presentation" id="GHk-Yv-6fu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="0t2-Rr-kbm"/>
-                            <constraint firstAttribute="centerY" secondItem="AKr-YF-blD" secondAttribute="centerY" id="5pd-9o-mci"/>
+                            <constraint firstItem="eEm-eD-DJO" firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="AqU-sy-bf9"/>
+                            <constraint firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="cYS-sb-eae"/>
+                            <constraint firstItem="AKr-YF-blD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="214" id="oBp-RG-WRa"/>
+                            <constraint firstItem="eEm-eD-DJO" firstAttribute="top" secondItem="AKr-YF-blD" secondAttribute="bottom" constant="20" id="wsP-H7-RzC"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -55,10 +84,229 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Game View Controller-->
+        <!--Multiplayer-->
+        <scene sceneID="uVs-Ot-u3E">
+            <objects>
+                <viewController id="xZE-5y-n6o" userLabel="Multiplayer" customClass="MultiplayerViewController" customModule="Tic_Tac_To" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2CH-iP-GVF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kb8-bI-1Ry"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZrH-es-4kE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8G-i7-5Ad" userLabel="Playing Board" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="15" y="139" width="290" height="290"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yqc-7p-pjP" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="93" y="0.0" width="4" height="290"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Afo-26-C9h" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="193" y="0.0" width="4" height="290"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahW-YC-N2Z" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="93" width="290" height="4"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WnP-mR-gKs" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="193" width="290" height="4"/>
+                                        <color key="backgroundColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QlG-EM-Xkp">
+                                        <rect key="frame" x="15" y="15" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G61-75-9QT">
+                                        <rect key="frame" x="114" y="15" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OrV-I7-lNL">
+                                        <rect key="frame" x="215" y="15" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9Q-WG-zxg">
+                                        <rect key="frame" x="15" y="114" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-zm-aWG">
+                                        <rect key="frame" x="114" y="114" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-Xb-E87">
+                                        <rect key="frame" x="215" y="114" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-qy-Xqv">
+                                        <rect key="frame" x="15" y="212" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fm-Ft-F4N">
+                                        <rect key="frame" x="114" y="212" width="63" height="63"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaI-Va-9ui">
+                                        <rect key="frame" x="215" y="212" width="63" height="63"/>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LYu-Jb-y1F">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="aJI-jR-pWv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-Og-4dz">
+                                        <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="A6q-gi-oMa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2M-B0-9RA">
+                                        <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="uZv-m7-5kl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-Ak-BFa">
+                                        <rect key="frame" x="0.0" y="100" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="4c6-uI-wW0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bq-CT-gay">
+                                        <rect key="frame" x="100" y="100" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="iCc-Cw-BO6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bo-CY-RpM">
+                                        <rect key="frame" x="200" y="100" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="uQH-HE-pRH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nr-Ut-Q0w">
+                                        <rect key="frame" x="0.0" y="200" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="Urs-31-f6y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krb-qg-vPA">
+                                        <rect key="frame" x="100" y="200" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="mTI-FV-wt9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANT-hM-8jt">
+                                        <rect key="frame" x="200" y="200" width="90" height="90"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="UIButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="0qB-Zn-fxr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="caN-xc-0IN"/>
+                                    <constraint firstAttribute="width" constant="290" id="zLn-Fn-wqk"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN1-TO-XmI">
+                                <rect key="frame" x="135" y="459" width="51" height="30"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="RESET">
+                                    <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonClicked:" destination="xZE-5y-n6o" eventType="touchUpInside" id="ogB-Lm-oxU"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSn-NZ-NHW">
+                                <rect key="frame" x="40" y="88" width="240" height="21"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="d8G-i7-5Ad" secondAttribute="centerX" id="GbQ-qa-Gf3"/>
+                            <constraint firstAttribute="centerY" secondItem="d8G-i7-5Ad" secondAttribute="centerY" id="k27-ZQ-1gZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="playingBoardView" destination="d8G-i7-5Ad" id="yb8-ZN-9jR"/>
+                        <outlet property="resetButton" destination="MN1-TO-XmI" id="6Jf-T5-W9r"/>
+                        <outlet property="ticTacButton1" destination="LYu-Jb-y1F" id="q4X-fx-7Zg"/>
+                        <outlet property="ticTacButton2" destination="EFB-Og-4dz" id="Gut-aF-XgW"/>
+                        <outlet property="ticTacButton3" destination="A2M-B0-9RA" id="yx7-2D-hsT"/>
+                        <outlet property="ticTacButton4" destination="9A3-Ak-BFa" id="sPG-OJ-DHe"/>
+                        <outlet property="ticTacButton5" destination="8Bq-CT-gay" id="uR2-dR-5hL"/>
+                        <outlet property="ticTacButton6" destination="0Bo-CY-RpM" id="bM6-9b-3G7"/>
+                        <outlet property="ticTacButton7" destination="0nr-Ut-Q0w" id="pxI-Zx-nNf"/>
+                        <outlet property="ticTacButton8" destination="krb-qg-vPA" id="1PY-r1-V6X"/>
+                        <outlet property="ticTacButton9" destination="ANT-hM-8jt" id="TPD-G3-isS"/>
+                        <outlet property="ticTacImg1" destination="QlG-EM-Xkp" id="gZg-eG-IUX"/>
+                        <outlet property="ticTacImg2" destination="G61-75-9QT" id="Chl-m2-sLN"/>
+                        <outlet property="ticTacImg3" destination="OrV-I7-lNL" id="79y-0d-pMK"/>
+                        <outlet property="ticTacImg4" destination="i9Q-WG-zxg" id="YY1-4y-Zfg"/>
+                        <outlet property="ticTacImg5" destination="3z0-zm-aWG" id="PS3-4n-78R"/>
+                        <outlet property="ticTacImg6" destination="X5y-Xb-E87" id="NHB-qY-tdh"/>
+                        <outlet property="ticTacImg7" destination="cfn-qy-Xqv" id="2Xr-Hs-ejM"/>
+                        <outlet property="ticTacImg8" destination="9fm-Ft-F4N" id="JlJ-MR-Imt"/>
+                        <outlet property="ticTacImg9" destination="NaI-Va-9ui" id="Ecc-Xj-uXo"/>
+                        <outlet property="userMessage" destination="gSn-NZ-NHW" id="P6B-4a-qC8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTm-79-C8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1060" y="676"/>
+        </scene>
+        <!--Singleplayer-->
         <scene sceneID="BHz-cZ-GUf">
             <objects>
-                <viewController id="gJw-Wf-ts6" customClass="GameViewController" customModule="Tic_Tac_To" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gJw-Wf-ts6" userLabel="Singleplayer" customClass="GameViewController" customModule="Tic_Tac_To" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="swe-4k-mjl"/>
                         <viewControllerLayoutGuide type="bottom" id="tly-Ye-in6"/>
@@ -272,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAr-YQ-ptm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050" y="310"/>
+            <point key="canvasLocation" x="1060" y="-56"/>
         </scene>
     </scenes>
 </document>
