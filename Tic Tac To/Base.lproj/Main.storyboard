@@ -38,9 +38,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gJw-Wf-ts6" kind="presentation" modalTransitionStyle="crossDissolve" id="d1f-BH-jrv"/>
+                                    <segue destination="gJw-Wf-ts6" kind="presentation" id="d1f-BH-jrv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEm-eD-DJO" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
@@ -65,9 +67,11 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="xZE-5y-n6o" kind="presentation" modalTransitionStyle="crossDissolve" id="GHk-Yv-6fu"/>
+                                    <segue destination="xZE-5y-n6o" kind="presentation" id="GHk-Yv-6fu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -267,15 +271,45 @@
                                 <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zz4-Z9-fia" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="115" y="513" width="90" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="Qkp-nm-4Wj"/>
+                                    <constraint firstAttribute="height" constant="35" id="oV5-Bk-iFz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="VeH-0F-dOK" kind="unwind" unwindAction="unwindToViewController:" id="C3c-pc-c3B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="d8G-i7-5Ad" secondAttribute="centerX" id="GbQ-qa-Gf3"/>
+                            <constraint firstAttribute="centerX" secondItem="zz4-Z9-fia" secondAttribute="centerX" id="OVh-Z3-9ic"/>
                             <constraint firstAttribute="centerY" secondItem="d8G-i7-5Ad" secondAttribute="centerY" id="k27-ZQ-1gZ"/>
+                            <constraint firstItem="Kb8-bI-1Ry" firstAttribute="top" secondItem="zz4-Z9-fia" secondAttribute="bottom" constant="20" id="mEX-CX-cKB"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backButton" destination="zz4-Z9-fia" id="bZB-g8-DvP"/>
                         <outlet property="playingBoardView" destination="d8G-i7-5Ad" id="yb8-ZN-9jR"/>
                         <outlet property="resetButton" destination="MN1-TO-XmI" id="6Jf-T5-W9r"/>
                         <outlet property="ticTacButton1" destination="LYu-Jb-y1F" id="q4X-fx-7Zg"/>
@@ -300,6 +334,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTm-79-C8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VeH-0F-dOK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1060" y="676"/>
         </scene>
@@ -486,15 +521,44 @@
                                 <color key="textColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vf-tb-SFE" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="115" y="513" width="90" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="PDY-g1-3ha"/>
+                                    <constraint firstAttribute="width" constant="90" id="R5f-pb-Bsq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="Zty-W6-EIe" kind="unwind" unwindAction="unwindToViewController:" id="j3q-Ye-oTQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="1vf-tb-SFE" secondAttribute="centerX" id="44X-Os-ZVg"/>
                             <constraint firstAttribute="centerX" secondItem="yOp-RW-Tx2" secondAttribute="centerX" id="9AI-RE-Rox"/>
+                            <constraint firstItem="tly-Ye-in6" firstAttribute="top" secondItem="1vf-tb-SFE" secondAttribute="bottom" constant="20" id="fhB-eS-zGv"/>
                             <constraint firstAttribute="centerY" secondItem="yOp-RW-Tx2" secondAttribute="centerY" id="hhZ-EB-LPZ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backButton" destination="1vf-tb-SFE" id="126-bV-1a1"/>
                         <outlet property="playingBoardView" destination="yOp-RW-Tx2" id="hsS-rw-Ekz"/>
                         <outlet property="resetButton" destination="MtT-gE-1Et" id="V8s-ih-bbu"/>
                         <outlet property="ticTacButton1" destination="7u4-pn-by5" id="abR-I4-prk"/>
@@ -519,6 +583,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAr-YQ-ptm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zty-W6-EIe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1060" y="-56"/>
         </scene>

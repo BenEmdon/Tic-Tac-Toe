@@ -39,16 +39,16 @@ class MultiplayerViewController: UIViewController
     @IBOutlet var userMessage: UILabel!
     
     
+    @IBOutlet var backButton: DesignableButton!
     
     
     
-    
+    var canGoBack = false
     
     var plays = [Int: Int]()
     var done = false
     var aiDeciding = false
     var counter:Int = 0
-    
     
     @IBAction func UIButtonClicked(sender:UIButton)
     {
@@ -83,6 +83,14 @@ class MultiplayerViewController: UIViewController
             }
         }
         checkForWin()
+        
+        if !canGoBack
+        {
+            backButton.hidden = false
+            backButton.animation = "slideUp"
+            backButton.animate()
+        }
+        canGoBack = true
     }
     
     

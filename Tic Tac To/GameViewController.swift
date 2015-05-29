@@ -38,10 +38,13 @@ class GameViewController: UIViewController
     
     @IBOutlet var userMessage: UILabel!
     
+    @IBOutlet var backButton: DesignableButton!
     
     var plays = [Int: Int]()
     var done = false
     var aiDeciding = false
+    
+    var canGoBack = false
     
     
     @IBAction func UIButtonClicked(sender:UIButton)
@@ -68,6 +71,13 @@ class GameViewController: UIViewController
         }
         checkForWin()
         aiTurn()
+        if !canGoBack
+        {
+            backButton.hidden = false
+            backButton.animation = "slideUp"
+            backButton.animate()
+        }
+        canGoBack = true
     }
     
     
