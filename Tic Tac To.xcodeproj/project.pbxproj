@@ -44,7 +44,7 @@
 		1D7F568B1B0D01F700A94E99 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F566E1B0D01F700A94E99 /* TransitionManager.swift */; };
 		1D7F568C1B0D01F700A94E99 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F566F1B0D01F700A94E99 /* TransitionZoom.swift */; };
 		1D7F568D1B0D01F700A94E99 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7F56701B0D01F700A94E99 /* UnwindSegue.swift */; };
-		1DF639731B0D49C900CB05D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF639721B0D49C900CB05D7 /* Images.xcassets */; };
+		1D94BA701B1CD0920059B54E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D94BA6F1B1CD0920059B54E /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +100,7 @@
 		1D7F566E1B0D01F700A94E99 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		1D7F566F1B0D01F700A94E99 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		1D7F56701B0D01F700A94E99 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		1DF639721B0D49C900CB05D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1D94BA6F1B1CD0920059B54E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Spring/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +148,7 @@
 				1D7F56501B0D018E00A94E99 /* GameViewController.swift */,
 				1D69D63E1B14FA9F00D12524 /* MultiplayerViewController.swift */,
 				1D7F56341B0CF63E00A94E99 /* Main.storyboard */,
-				1DF639721B0D49C900CB05D7 /* Images.xcassets */,
+				1D94BA6F1B1CD0920059B54E /* Images.xcassets */,
 				1D7F56391B0CF63E00A94E99 /* LaunchScreen.xib */,
 				1D7F562F1B0CF63E00A94E99 /* Tic_Tac_To.xcdatamodeld */,
 				1D7F562B1B0CF63E00A94E99 /* Supporting Files */,
@@ -299,8 +299,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7F567D1B0D01F700A94E99 /* Info.plist in Resources */,
+				1D94BA701B1CD0920059B54E /* Images.xcassets in Resources */,
 				1D7F56361B0CF63E00A94E99 /* Main.storyboard in Resources */,
-				1DF639731B0D49C900CB05D7 /* Images.xcassets in Resources */,
 				1D7F563B1B0CF63E00A94E99 /* LaunchScreen.xib in Resources */,
 				1D7F56801B0D01F700A94E99 /* LoadingView.xib in Resources */,
 			);

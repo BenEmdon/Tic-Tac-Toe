@@ -38,8 +38,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="gJw-Wf-ts6" kind="presentation" id="d1f-BH-jrv"/>
@@ -67,26 +65,144 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="xZE-5y-n6o" kind="presentation" id="GHk-Yv-6fu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bio-uf-ydH" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="95" y="513" width="130" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="4SE-at-vCa"/>
+                                    <constraint firstAttribute="height" constant="35" id="63V-xw-VzK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="@Ben_Emdon">
+                                    <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="PgS-Yg-Alb" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="6vs-UA-YPD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUy-tV-0mP" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="156" y="462" width="130" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="V5e-Jt-iBx"/>
+                                    <constraint firstAttribute="width" constant="130" id="emo-Ye-8jN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                <state key="normal" title="@BenEisBEST">
+                                    <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98166454079999999" green="0.98166454079999999" blue="0.98166454079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Bio-uf-ydH" secondAttribute="bottom" constant="20" id="17m-YW-o9x"/>
                             <constraint firstItem="eEm-eD-DJO" firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="AqU-sy-bf9"/>
+                            <constraint firstAttribute="centerX" secondItem="Bio-uf-ydH" secondAttribute="centerX" id="ZMr-MR-D3P"/>
                             <constraint firstAttribute="centerX" secondItem="AKr-YF-blD" secondAttribute="centerX" id="cYS-sb-eae"/>
                             <constraint firstItem="AKr-YF-blD" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="214" id="oBp-RG-WRa"/>
                             <constraint firstItem="eEm-eD-DJO" firstAttribute="top" secondItem="AKr-YF-blD" secondAttribute="bottom" constant="20" id="wsP-H7-RzC"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zUy-tV-0mP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="multiplayerButton" destination="eEm-eD-DJO" id="llq-ci-Kk8"/>
+                        <outlet property="singleplayerButton" destination="AKr-YF-blD" id="FPp-fD-MR8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--About Dev-->
+        <scene sceneID="uiY-Tj-skB">
+            <objects>
+                <viewController id="PgS-Yg-Alb" userLabel="About Dev" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ap3-e9-jR7"/>
+                        <viewControllerLayoutGuide type="bottom" id="yVN-qM-eir"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UXI-3u-XJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GjB-CS-4Kd" customClass="DesignableView" customModule="Tic_Tac_To" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="427" width="320" height="141"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="Dev-image" translatesAutoresizingMaskIntoConstraints="NO" id="UB4-Yc-0FY">
+                                        <rect key="frame" x="20" y="26" width="84" height="84"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1E-Ck-6c1" customClass="DesignableButton" customModule="Tic_Tac_To" customModuleProvider="target">
+                                        <rect key="frame" x="120" y="53" width="180" height="35"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="15"/>
+                                        <state key="normal" title="FOLLOW">
+                                            <color key="titleColor" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.82343930006027222" green="0.82358133792877197" blue="0.82343029975891113" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.44705882349999998" green="0.44705882349999998" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLr-UQ-2YU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407" y="985"/>
         </scene>
         <!--Multiplayer-->
         <scene sceneID="uVs-Ot-u3E">
@@ -336,7 +452,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTm-79-C8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="VeH-0F-dOK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="676"/>
+            <point key="canvasLocation" x="1228" y="736"/>
         </scene>
         <!--Singleplayer-->
         <scene sceneID="BHz-cZ-GUf">
@@ -585,7 +701,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAr-YQ-ptm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Zty-W6-EIe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="-56"/>
+            <point key="canvasLocation" x="1228" y="18"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dev-image" width="84" height="84"/>
+    </resources>
 </document>
