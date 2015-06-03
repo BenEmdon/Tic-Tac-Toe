@@ -142,6 +142,7 @@ class GameViewController: UIViewController
     
     func checkForWin()
     {
+        var win = false
         var whoWon = ["Computer":0,"You":1]
         for(key,value) in whoWon
         {
@@ -154,11 +155,12 @@ class GameViewController: UIViewController
                 (plays[1] == value && plays[5] == value && plays[9] == value) || //diag left right
                 (plays[3] == value && plays[5] == value && plays[7] == value)//diag right left
             {
+                win = true
                 userMessage.text = "\(key) won!"
                 userMessage.hidden = false
                 resetButton.hidden = false
                 done = true
-            }else if allOccupied()
+            }else if allOccupied() && !win
             {
                 userMessage.text = "It's a tie!"
                 userMessage.hidden = false
