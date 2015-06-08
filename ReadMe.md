@@ -24,11 +24,7 @@ Design
 
 All the user interface elements were designed by Ben Emdon in Sketch for OSX. Rounded edges and minimalistic colour sets were used to keep the app as simple and intuitive as possible.  
 
-![Menu](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/1MenuScreen.png)
-![GameScreen](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/2GameScreen.png)
-![FollowDev](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/3FollowDevScreen.png)
-![FollowDev2](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/4FollowDevScreen2.png)
-
+![GameScreens](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/GameScreens.png)
 
 Implementation
 ==============
