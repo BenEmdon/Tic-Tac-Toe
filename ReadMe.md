@@ -19,12 +19,14 @@ Look for:
 	ViewController.swift
 	FollowDevView.swift
 
+
 Design
 ======
 
 All the user interface elements were designed by Ben Emdon in Sketch for OSX. Rounded edges and minimalistic colour sets were used to keep the app as simple and intuitive as possible.  
 
 ![GameScreens](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/GameScreens.png)
+
 
 Implementation
 ==============
@@ -44,4 +46,12 @@ Testing the Tic Tac Toe Game application was made possible by the iOS simulator 
 Conclusion
 ==========
 
-Overall the project was a success. The given opportunity was seized. I will continue to learn app development with the swift programming language.
+Overall the project was a success. The game is functional.
+
+
+Install
+=======
+
+Mac:
+- Download and unarchive
+- Run in Xcode (Tested on version 6.3.2)
