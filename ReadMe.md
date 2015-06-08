@@ -2,14 +2,14 @@ Tic-Tac-Toe for iOS
 ================================
 (last updated: June 8, 2015)
 
-This is a simple Tic Tac Toe game created in the swift programming language for iOS. The swift programming language was designed and launched by Apple Inc. in 2014. The language is based off Objective-C.
+This is a simple Tic Tac Toe game created in Swift, the iOS programming language. Swift was designed and launched by Apple Inc. in 2014. The language is based on Objective-C.
 
 Game Features:
-There is a singleplayer and multiplayer state. The game is fully functional and stable at 60fps on an iPhone 5s (phone model). The game has simple animations using the “Spring” animation library.
+There is a single- and multi-player state. The game is fully functional and stable at 60fps on an iPhone 5s (phone model). The game has simple animations using the “Spring” animation library.
 In singleplayer the player goes up against the A.I. (a Tic Tac Toe algorithm).
 The following image describes the orientation of the projectors in the room:
 
-There is also a follow developer button that redirects the player to @Ben_Emdon (www.twitter.com/Ben_Emdon) complete with animations.
+There is also a follow developer button that redirects the player to @Ben_Emdon (Twitter) complete with animations.
 
 Locate the code:
 All code files are inside /Tic Tac To.
