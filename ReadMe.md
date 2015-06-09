@@ -12,12 +12,12 @@ The following image describes the orientation of the projectors in the room:
 There is also a follow developer button that redirects the player to @Ben_Emdon (Twitter) complete with animations.
 
 Locate the code:
-All code files are inside /Tic Tac To.
+All code files are inside [/Tic Tac To](https://github.com/BenEmdon/Tic-Tac-Toe/tree/master/Tic%20Tac%20To).
 Look for:
-        GameViewController.swift  
-        MultiplayerViewController.swift
-        ViewController.swift
-        FollowDevView.swift
+- GameViewController.swift  
+- MultiplayerViewController.swift
+- ViewController.swift
+- FollowDevView.swift
 
 
 Design
