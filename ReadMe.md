@@ -14,10 +14,10 @@ There is also a follow developer button that redirects the player to @Ben_Emdon 
 Locate the code:
 All code files are inside /Tic Tac To.
 Look for:
-	GameViewController.swift  
-	MultiplayerViewController.swift
-	ViewController.swift
-	FollowDevView.swift
+        GameViewController.swift  
+        MultiplayerViewController.swift
+        ViewController.swift
+        FollowDevView.swift
 
 
 Design
