@@ -56,4 +56,4 @@ Install
 
 Mac:
 - Download and unarchive
-- Run in Xcode (Tested on version 6.3.2)
+- Run in Xcode (Tested on version 6.3.2 - 6.4)
