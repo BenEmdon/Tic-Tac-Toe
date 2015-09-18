@@ -56,4 +56,4 @@ Install
 
 Mac:
 - Download and unarchive
-- Run in Xcode (Tested on version 6.3.2 - 6.4)
+- Currently Swift 2.0 runs runs in Xcode 7.0 and up
