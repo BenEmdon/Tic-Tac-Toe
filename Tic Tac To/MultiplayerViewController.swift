@@ -97,7 +97,7 @@ class MultiplayerViewController: UIViewController
     
     func setImageToSpot(spot:Int, player:Int)
     {
-        var playerMark = player == 1 ? "x-icon2" : "o-icon2"
+        let playerMark = player == 1 ? "x-icon2" : "o-icon2"
         plays[spot] = player
         switch spot
         {
@@ -156,7 +156,7 @@ class MultiplayerViewController: UIViewController
     func checkForWin()
     {
         var win = false
-        var whoWon = ["Red":0,"Blue":1]
+        let whoWon = ["Red":0,"Blue":1]
         for(key,value) in whoWon
         {
             if  (plays[1] == value && plays[2] == value && plays[3] == value) || //across the top

@@ -28,7 +28,7 @@ public class TransitionZoom: NSObject, UIViewControllerTransitioningDelegate, UI
     var duration = 0.4
     
     public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView()!
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
@@ -38,7 +38,8 @@ public class TransitionZoom: NSObject, UIViewControllerTransitioningDelegate, UI
             
             toView.alpha = 0
             toView.transform = CGAffineTransformMakeScale(2, 2)
-            springEaseInOut(duration) {
+
+            SpringAnimation.springEaseInOut(duration) {
                 fromView.transform = CGAffineTransformMakeScale(0.5, 0.5)
                 fromView.alpha = 0
                 toView.transform = CGAffineTransformIdentity
@@ -49,7 +50,7 @@ public class TransitionZoom: NSObject, UIViewControllerTransitioningDelegate, UI
             container.addSubview(toView)
             container.addSubview(fromView)
             
-            springEaseInOut(duration) {
+            SpringAnimation.springEaseInOut(duration) {
                 fromView.transform = CGAffineTransformMakeScale(2, 2)
                 fromView.alpha = 0
                 toView.transform = CGAffineTransformMakeScale(1, 1)
@@ -57,12 +58,12 @@ public class TransitionZoom: NSObject, UIViewControllerTransitioningDelegate, UI
             }
         }
         
-        delay(duration, {
+        delay(duration, closure: {
             transitionContext.completeTransition(true)
         })
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return duration
     }
     

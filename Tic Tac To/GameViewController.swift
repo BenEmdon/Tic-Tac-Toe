@@ -84,7 +84,7 @@ class GameViewController: UIViewController
     
     func setImageToSpot(spot:Int, player:Int)
     {
-        var playerMark = player == 1 ? "x-icon2" : "o-icon2"
+        let playerMark = player == 1 ? "x-icon2" : "o-icon2"
         plays[spot] = player
         switch spot
         {
@@ -143,7 +143,7 @@ class GameViewController: UIViewController
     func checkForWin()
     {
         var win = false
-        var whoWon = ["Computer":0,"You":1]
+        let whoWon = ["Computer":0,"You":1]
         for(key,value) in whoWon
         {
             if  (plays[1] == value && plays[2] == value && plays[3] == value) || //across the top
@@ -186,35 +186,35 @@ class GameViewController: UIViewController
     //ai function
     //requires delay 
     
-    func checkTop(#value:Int) -> (location:String, pattern:String)
+    func checkTop(value value:Int) -> (location:String, pattern:String)
     {
         return ("top", checkFor(value, inList: [1,2,3]))
     }
-    func checkMiddle(#value:Int) -> (location:String, pattern:String)
+    func checkMiddle(value value:Int) -> (location:String, pattern:String)
     {
         return ("middle", checkFor(value, inList: [4,5,6]))
     }
-    func checkBottom(#value:Int) -> (location:String, pattern:String)
+    func checkBottom(value value:Int) -> (location:String, pattern:String)
     {
         return ("bottom", checkFor(value, inList: [7,8,9]))
     }
-    func checkLeft(#value:Int) -> (location:String, pattern:String)
+    func checkLeft(value value:Int) -> (location:String, pattern:String)
     {
         return ("left", checkFor(value, inList: [1,4,7]))
     }
-    func checkMiddleDown(#value:Int) -> (location:String, pattern:String)
+    func checkMiddleDown(value value:Int) -> (location:String, pattern:String)
     {
         return ("middleDown", checkFor(value, inList: [2,5,8]))
     }
-    func checkRight(#value:Int) -> (location:String, pattern:String)
+    func checkRight(value value:Int) -> (location:String, pattern:String)
     {
         return ("right", checkFor(value, inList: [3,6,9]))
     }
-    func checkDiagLeftRight(#value:Int) -> (location:String, pattern:String)
+    func checkDiagLeftRight(value value:Int) -> (location:String, pattern:String)
     {
         return ("diagLeftRight", checkFor(value, inList: [1,5,9]))
     }
-    func checkDiagRightLeft(#value:Int) -> (location:String, pattern:String)
+    func checkDiagRightLeft(value value:Int) -> (location:String, pattern:String)
     {
         return ("diagRightLeft", checkFor(value, inList: [7,5,3]))
     }
@@ -240,14 +240,14 @@ class GameViewController: UIViewController
     }
     
     
-    func rowCheck (#value:Int) -> (location:String, pattern:String)?
+    func rowCheck (value value:Int) -> (location:String, pattern:String)?
     {
-        var acceptableFinds = ["110", "011", "101"]
-        var findFuncs = [checkTop, checkMiddle, checkBottom, checkLeft, checkMiddleDown, checkRight, checkDiagLeftRight, checkDiagRightLeft]
+        let acceptableFinds = ["110", "011", "101"]
+        let findFuncs = [checkTop, checkMiddle, checkBottom, checkLeft, checkMiddleDown, checkRight, checkDiagLeftRight, checkDiagRightLeft]
         for algorithm in findFuncs
         {
-            var algorithmResults = algorithm(value:value)
-            if (find(acceptableFinds,algorithmResults.pattern) != nil)
+            let algorithmResults = algorithm(value:value)
+            if (acceptableFinds.indexOf((algorithmResults.pattern)) != nil)
             {
                 return algorithmResults
             }
@@ -309,9 +309,9 @@ class GameViewController: UIViewController
         }
         
         
-        func firstAvailable(#isCorner:Bool) -> Int?
+        func firstAvailable(isCorner isCorner:Bool) -> Int?
         {
-            var spots = isCorner ? [1, 3, 7, 9] : [2, 4, 6, 8]
+            let spots = isCorner ? [1, 3, 7, 9] : [2, 4, 6, 8]
             for spot in spots
             {
                 if !isOccupied(spot)
@@ -346,9 +346,9 @@ class GameViewController: UIViewController
     
     func whereToPlay(location:String, pattern:String) ->Int
     {
-        var leftPattern = "011"
+        let leftPattern = "011"
         var rightPattern = "110"
-        var middlePattern = "101"
+        let middlePattern = "101"
         
         switch location
         {

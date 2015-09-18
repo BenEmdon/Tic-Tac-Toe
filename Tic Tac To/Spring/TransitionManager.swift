@@ -28,7 +28,7 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
     var duration = 0.3
     
     public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView()!
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
@@ -37,7 +37,7 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
             toView.transform = CGAffineTransformMakeTranslation(0, container.frame.size.height)
             container.addSubview(fromView)
             container.addSubview(toView)
-            springEaseInOut(duration) {
+            SpringAnimation.springEaseInOut(duration) {
                 fromView.transform = CGAffineTransformMakeScale(0.8, 0.8)
                 fromView.alpha = 0.5
                 toView.transform = CGAffineTransformIdentity
@@ -58,19 +58,19 @@ public class TransitionManager: NSObject, UIViewControllerTransitioningDelegate,
             container.addSubview(toView)
             container.addSubview(fromView)
 
-            springEaseInOut(duration) {
+            SpringAnimation.springEaseInOut(duration) {
                 fromView.transform = CGAffineTransformMakeTranslation(0, fromView.frame.size.height)
                 toView.transform = CGAffineTransformIdentity
                 toView.alpha = 1
             }
         }
         
-        delay(duration, {
+        delay(duration, closure: {
             transitionContext.completeTransition(true)
         })
     }
     
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return duration
     }
     
