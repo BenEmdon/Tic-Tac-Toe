@@ -9,7 +9,8 @@ There is a single and multi-player state. The game is fully functional and stabl
 In singleplayer the player goes up against the A.I. (a Tic Tac Toe algorithm).
 The following image describes the orientation of the projectors in the room:
 
--------- CURRENTLY UNDER RECONSTRUCTION --------
+-------- *CURRENTLY UNDER RECONSTRUCTION* --------
+
 There is also a follow developer button that redirects the player to @Ben_Emdon (Twitter) complete with animations.
 
 **Locate the code:**
@@ -21,7 +22,7 @@ Look for:
 - MultiplayerViewController.swift
 - ViewController.swift
 
--------- CURRENTLY UNDER RECONSTRUCTION --------
+-------- *CURRENTLY UNDER RECONSTRUCTION* --------
 - FollowDevView.swift
 
 
