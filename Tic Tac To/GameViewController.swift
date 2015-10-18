@@ -347,7 +347,6 @@ class GameViewController: UIViewController
     func whereToPlay(location:String, pattern:String) ->Int
     {
         let leftPattern = "011"
-        var rightPattern = "110"
         let middlePattern = "101"
         
         switch location
