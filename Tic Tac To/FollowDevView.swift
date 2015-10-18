@@ -13,6 +13,5 @@ class FollowDevView: UIViewController
     @IBAction func followButtonDidPress(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string:"https://twitter.com/Ben_Emdon")!)
             self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
+    } 
 }

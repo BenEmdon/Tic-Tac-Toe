@@ -1,14 +1,15 @@
 Tic-Tac-Toe for iOS
 ================================
-(last updated: June 8, 2015)
+(last updated: Oct 18, 2015)
 
 This is a simple Tic Tac Toe game created in Swift, the iOS programming language. Swift was designed and launched by Apple Inc. in 2014. The language is based on Objective-C.
 
 **Game Features:**
-There is a single- and multi-player state. The game is fully functional and stable at 60fps on an iPhone 5s (phone model). The game has simple animations using the “Spring” animation library.
+There is a single and multi-player state. The game is fully functional and stable at 60fps on an iPhone 5s/6. The game has simple animations using the “Spring” animation library.
 In singleplayer the player goes up against the A.I. (a Tic Tac Toe algorithm).
 The following image describes the orientation of the projectors in the room:
 
+-------- CURRENTLY UNDER RECONSTRUCTION --------
 There is also a follow developer button that redirects the player to @Ben_Emdon (Twitter) complete with animations.
 
 **Locate the code:**
@@ -19,13 +20,15 @@ Look for:
 - GameViewController.swift  
 - MultiplayerViewController.swift
 - ViewController.swift
+
+-------- CURRENTLY UNDER RECONSTRUCTION --------
 - FollowDevView.swift
 
 
 Design
 ======
 
-All the user interface elements were designed by Ben Emdon in Sketch for OSX. Rounded edges and minimalistic colour sets were used to keep the app as simple and intuitive as possible.  
+All the user interface elements were designed by Ben Emdon in Sketch for OS X. Rounded edges and minimalistic colour sets were used to keep the app as simple and intuitive as possible.  
 
 ![GameScreens](https://github.com/BenEmdon/Tic-Tac-Toe/blob/master/GameScreens/GameScreens.png)
 
@@ -42,7 +45,7 @@ For the Tic Tac Toe game the following technologies were used:
 Testing
 =======
 
-Testing the Tic Tac Toe Game application was made possible by the iOS simulator for OSX.
+Testing the Tic Tac Toe Game application was made possible by the iOS simulator for OS X.
 
 
 Conclusion
@@ -57,3 +60,4 @@ Install
 Mac:
 - Download and unarchive
 - Currently Swift 2.0 runs runs in Xcode 7.0 and up
+- Tested on iPhone 5 and 6s
