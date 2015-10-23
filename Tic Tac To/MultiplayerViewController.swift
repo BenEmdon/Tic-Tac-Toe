@@ -169,6 +169,15 @@ class MultiplayerViewController: UIViewController
                 (plays[3] == value && plays[5] == value && plays[7] == value)//diag right left
             {
                 win = true
+                if key == "Blue"
+                {
+                    userMessage.textColor = UIColor(red:0.331, green:0.528, blue:0.874, alpha:1)
+                }
+                else
+                {
+                    userMessage.textColor = UIColor(red:0.875, green:0.365, blue:0.356, alpha:1)
+                }
+                
                 userMessage.text = "\(key) won!"
                 userMessage.hidden = false
                 resetButton.hidden = false
@@ -177,6 +186,7 @@ class MultiplayerViewController: UIViewController
             else if allOccupied() && !win
             {
                 userMessage.text = "It's a tie!"
+                userMessage.textColor = UIColor(red:0.521, green:0.521, blue:0.521, alpha:1)
                 userMessage.hidden = false
                 resetButton.hidden = false
                 done = true
