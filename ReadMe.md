@@ -7,11 +7,6 @@ This is a simple Tic Tac Toe game created in Swift, the iOS programming language
 **Game Features:**
 There is a single and multi-player state. The game is fully functional and stable at 60fps on an iPhone 5s/6. The game has simple animations using the “Spring” animation library.
 In singleplayer the player goes up against the A.I. (a Tic Tac Toe algorithm).
-The following image describes the orientation of the projectors in the room:
-
--------- *CURRENTLY UNDER RECONSTRUCTION* --------
-
-There is also a follow developer button that redirects the player to @Ben_Emdon (Twitter) complete with animations.
 
 **Locate the code:**
 
